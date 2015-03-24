@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PARWeatherViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    PARWeatherViewController *vc = [[PARWeatherViewController alloc] init];
+    
+    [self.window setRootViewController:vc];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

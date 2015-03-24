@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		C51C019B1ABC967F00971D38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C019A1ABC967F00971D38 /* main.m */; };
 		C51C019E1ABC967F00971D38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C019D1ABC967F00971D38 /* AppDelegate.m */; };
-		C51C01A11ABC967F00971D38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C01A01ABC967F00971D38 /* ViewController.m */; };
-		C51C01A41ABC967F00971D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C51C01A21ABC967F00971D38 /* Main.storyboard */; };
 		C51C01A61ABC967F00971D38 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51C01A51ABC967F00971D38 /* Images.xcassets */; };
 		C51C01A91ABC967F00971D38 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51C01A71ABC967F00971D38 /* LaunchScreen.xib */; };
 		C51C01B51ABC968000971D38 /* weatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C01B41ABC968000971D38 /* weatherAppTests.m */; };
+		C51C01D31ABC998B00971D38 /* PARWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C01D11ABC998B00971D38 /* PARWeatherViewController.m */; };
+		C51C01D41ABC998B00971D38 /* PARWeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51C01D21ABC998B00971D38 /* PARWeatherViewController.xib */; };
+		C51C01D71ABCA23600971D38 /* PARForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C01D61ABCA23600971D38 /* PARForecast.m */; };
+		C51C01DB1ABCA28800971D38 /* PARDayWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C01DA1ABCA28800971D38 /* PARDayWeather.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		C51C019A1ABC967F00971D38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C51C019C1ABC967F00971D38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C51C019D1ABC967F00971D38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C51C019F1ABC967F00971D38 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C51C01A01ABC967F00971D38 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C51C01A31ABC967F00971D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C51C01A51ABC967F00971D38 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C51C01A81ABC967F00971D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C51C01AE1ABC968000971D38 /* weatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51C01B31ABC968000971D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C51C01B41ABC968000971D38 /* weatherAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weatherAppTests.m; sourceTree = "<group>"; };
+		C51C01D01ABC998B00971D38 /* PARWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARWeatherViewController.h; sourceTree = "<group>"; };
+		C51C01D11ABC998B00971D38 /* PARWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARWeatherViewController.m; sourceTree = "<group>"; };
+		C51C01D21ABC998B00971D38 /* PARWeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARWeatherViewController.xib; sourceTree = "<group>"; };
+		C51C01D51ABCA23600971D38 /* PARForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARForecast.h; sourceTree = "<group>"; };
+		C51C01D61ABCA23600971D38 /* PARForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARForecast.m; sourceTree = "<group>"; };
+		C51C01D91ABCA28800971D38 /* PARDayWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARDayWeather.h; sourceTree = "<group>"; };
+		C51C01DA1ABCA28800971D38 /* PARDayWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARDayWeather.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +89,13 @@
 			children = (
 				C51C019C1ABC967F00971D38 /* AppDelegate.h */,
 				C51C019D1ABC967F00971D38 /* AppDelegate.m */,
-				C51C019F1ABC967F00971D38 /* ViewController.h */,
-				C51C01A01ABC967F00971D38 /* ViewController.m */,
-				C51C01A21ABC967F00971D38 /* Main.storyboard */,
+				C51C01D81ABCA23A00971D38 /* Model */,
 				C51C01A51ABC967F00971D38 /* Images.xcassets */,
 				C51C01A71ABC967F00971D38 /* LaunchScreen.xib */,
 				C51C01981ABC967F00971D38 /* Supporting Files */,
+				C51C01D01ABC998B00971D38 /* PARWeatherViewController.h */,
+				C51C01D11ABC998B00971D38 /* PARWeatherViewController.m */,
+				C51C01D21ABC998B00971D38 /* PARWeatherViewController.xib */,
 			);
 			path = weatherApp;
 			sourceTree = "<group>";
@@ -117,6 +124,17 @@
 				C51C01B31ABC968000971D38 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C51C01D81ABCA23A00971D38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C51C01D51ABCA23600971D38 /* PARForecast.h */,
+				C51C01D61ABCA23600971D38 /* PARForecast.m */,
+				C51C01D91ABCA28800971D38 /* PARDayWeather.h */,
+				C51C01DA1ABCA28800971D38 /* PARDayWeather.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C51C01A41ABC967F00971D38 /* Main.storyboard in Resources */,
+				C51C01D41ABC998B00971D38 /* PARWeatherViewController.xib in Resources */,
 				C51C01A91ABC967F00971D38 /* LaunchScreen.xib in Resources */,
 				C51C01A61ABC967F00971D38 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C51C01A11ABC967F00971D38 /* ViewController.m in Sources */,
 				C51C019E1ABC967F00971D38 /* AppDelegate.m in Sources */,
 				C51C019B1ABC967F00971D38 /* main.m in Sources */,
+				C51C01D71ABCA23600971D38 /* PARForecast.m in Sources */,
+				C51C01DB1ABCA28800971D38 /* PARDayWeather.m in Sources */,
+				C51C01D31ABC998B00971D38 /* PARWeatherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +264,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C51C01A21ABC967F00971D38 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C51C01A31ABC967F00971D38 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C51C01A71ABC967F00971D38 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
