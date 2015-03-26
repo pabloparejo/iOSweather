@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSString *dayMain;
 @property (nonatomic, copy) NSString *dayDescription;
 @property (nonatomic, copy) NSString *humidity;
+@property (nonatomic, copy) NSURL *imageURL;
 
 -(id) initWithJSONDay:(NSDictionary *) day;
 

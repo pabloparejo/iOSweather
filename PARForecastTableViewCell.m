@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Pablo Parejo Camacho. All rights reserved.
 //
 
-#import "TableViewCell.h"
+#import "PARForecastTableViewCell.h"
 
-@implementation TableViewCell
+@implementation PARForecastTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -18,6 +18,14 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+
++(NSString *) cellId{
+    return [[self class] description];
+}
++(CGFloat) cellHeight{
+    return 55;
 }
 
 @end

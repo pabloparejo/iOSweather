@@ -16,6 +16,8 @@
 		C51C01D41ABC998B00971D38 /* PARWeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51C01D21ABC998B00971D38 /* PARWeatherViewController.xib */; };
 		C51C01D71ABCA23600971D38 /* PARForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C01D61ABCA23600971D38 /* PARForecast.m */; };
 		C51C01DB1ABCA28800971D38 /* PARDayWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = C51C01DA1ABCA28800971D38 /* PARDayWeather.m */; };
+		C58C2C5D1AC4C23C00477F6B /* PARForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C58C2C5B1AC4C23C00477F6B /* PARForecastTableViewCell.m */; };
+		C58C2C5E1AC4C23C00477F6B /* PARForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58C2C5C1AC4C23C00477F6B /* PARForecastTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,9 @@
 		C51C01D61ABCA23600971D38 /* PARForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARForecast.m; sourceTree = "<group>"; };
 		C51C01D91ABCA28800971D38 /* PARDayWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARDayWeather.h; sourceTree = "<group>"; };
 		C51C01DA1ABCA28800971D38 /* PARDayWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARDayWeather.m; sourceTree = "<group>"; };
+		C58C2C5A1AC4C23C00477F6B /* PARForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARForecastTableViewCell.h; sourceTree = "<group>"; };
+		C58C2C5B1AC4C23C00477F6B /* PARForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARForecastTableViewCell.m; sourceTree = "<group>"; };
+		C58C2C5C1AC4C23C00477F6B /* PARForecastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARForecastTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +94,12 @@
 			children = (
 				C51C019C1ABC967F00971D38 /* AppDelegate.h */,
 				C51C019D1ABC967F00971D38 /* AppDelegate.m */,
+				C58C2C5F1AC4C24D00477F6B /* View */,
+				C58C2C591AC4C21800477F6B /* Controller */,
 				C51C01D81ABCA23A00971D38 /* Model */,
 				C51C01A51ABC967F00971D38 /* Images.xcassets */,
 				C51C01A71ABC967F00971D38 /* LaunchScreen.xib */,
 				C51C01981ABC967F00971D38 /* Supporting Files */,
-				C51C01D01ABC998B00971D38 /* PARWeatherViewController.h */,
-				C51C01D11ABC998B00971D38 /* PARWeatherViewController.m */,
 				C51C01D21ABC998B00971D38 /* PARWeatherViewController.xib */,
 			);
 			path = weatherApp;
@@ -135,6 +140,26 @@
 				C51C01DA1ABCA28800971D38 /* PARDayWeather.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C58C2C591AC4C21800477F6B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C51C01D01ABC998B00971D38 /* PARWeatherViewController.h */,
+				C51C01D11ABC998B00971D38 /* PARWeatherViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C58C2C5F1AC4C24D00477F6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C58C2C5A1AC4C23C00477F6B /* PARForecastTableViewCell.h */,
+				C58C2C5B1AC4C23C00477F6B /* PARForecastTableViewCell.m */,
+				C58C2C5C1AC4C23C00477F6B /* PARForecastTableViewCell.xib */,
+			);
+			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C51C01D41ABC998B00971D38 /* PARWeatherViewController.xib in Resources */,
+				C58C2C5E1AC4C23C00477F6B /* PARForecastTableViewCell.xib in Resources */,
 				C51C01A91ABC967F00971D38 /* LaunchScreen.xib in Resources */,
 				C51C01A61ABC967F00971D38 /* Images.xcassets in Resources */,
 			);
@@ -238,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C51C019E1ABC967F00971D38 /* AppDelegate.m in Sources */,
+				C58C2C5D1AC4C23C00477F6B /* PARForecastTableViewCell.m in Sources */,
 				C51C019B1ABC967F00971D38 /* main.m in Sources */,
 				C51C01D71ABCA23600971D38 /* PARForecast.m in Sources */,
 				C51C01DB1ABCA28800971D38 /* PARDayWeather.m in Sources */,
@@ -424,6 +451,7 @@
 				C51C01BA1ABC968000971D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C51C01BB1ABC968000971D38 /* Build configuration list for PBXNativeTarget "weatherAppTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +460,7 @@
 				C51C01BD1ABC968000971D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
