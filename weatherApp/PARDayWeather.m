@@ -8,18 +8,18 @@
 
 #import "PARDayWeather.h"
 
-#define ICON_URL @"http://openweathermap.org/img/w/%@"
+#define ICON_URL @"http://openweathermap.org/img/w/%@.png"
 
 @implementation PARDayWeather
 
 -(id) initWithJSONDay:(NSDictionary *) day{
     if (self = [super init]) {
-        _dayDescription = [[day valueForKeyPath:@"weather.description"] objectAtIndex:0];
-        _dayMain = [[day valueForKeyPath:@"weather.main"] objectAtIndex:0];
-        _max = [NSString stringWithFormat:@"%@ºC", [day valueForKeyPath:@"temp.max"]];
-        _min = [NSString stringWithFormat:@"%@ºC", [day valueForKeyPath:@"temp.min"]];
+        _dayDescription = [[day valueForKeyPath:@"weather.description"] firstObject];
+        _dayMain = [[day valueForKeyPath:@"weather.main"] firstObject];
+        _max = [NSString stringWithFormat:@"%ldºC", (long)[[day valueForKeyPath:@"temp.max"] floatValue]];
+        _min = [NSString stringWithFormat:@"%ldºC", (long)[[day valueForKeyPath:@"temp.min"] integerValue]];
         _humidity = [day objectForKey:@"humidity"];
-        _imageURL = [NSURL URLWithString:[NSString stringWithFormat:ICON_URL, [[day valueForKeyPath:@"weather.icon"] objectAtIndex:0]]];
+        _imageURL = [NSURL URLWithString:[NSString stringWithFormat:ICON_URL, [[day valueForKeyPath:@"weather.icon"] firstObject]]];
         NSLog(@"%@", [day valueForKeyPath:@"weather.icon"]);
     }
     return self;

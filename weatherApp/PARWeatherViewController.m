@@ -25,16 +25,16 @@
     // [self.view endEditing:YES];
     
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    //solo si está en navigationViewController
+    //self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self registerNibs];
-
-    [self syncModelWithStringURL:[NSString stringWithFormat:cityURL, @"Madrid"]];
 
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     
-
+    [self syncModelWithStringURL:[NSString stringWithFormat:cityURL, @"Madrid"]];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -52,7 +52,7 @@
 
 -(NSInteger) tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return [self.model countOfDays];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,9 +64,10 @@
     
     PARForecastTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PARForecastTableViewCell cellId] forIndexPath:indexPath];
     
+    [cell.forecastImage setImage:nil];
+    
     PARDayWeather *cellModel = [self.model dayAtIndex:indexPath.row];
     [cell.loading startAnimating];
-    [cell.loading setHidden:NO];
     [cell.cityLabel setText:[cellModel dayDescription]];
     [cell.minLabel setText:[cellModel min]];
     [cell.maxLabel setText:[cellModel max]];
@@ -75,7 +76,6 @@
     [self setCellIconURL:[cellModel imageURL] withImage:^(UIImage *image) {
         [cell.forecastImage setImage:image];
         [cell.loading stopAnimating];
-        [cell.loading setHidden:YES];
     }];
     
     return cell;

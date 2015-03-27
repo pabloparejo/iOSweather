@@ -100,7 +100,6 @@
 				C51C01A51ABC967F00971D38 /* Images.xcassets */,
 				C51C01A71ABC967F00971D38 /* LaunchScreen.xib */,
 				C51C01981ABC967F00971D38 /* Supporting Files */,
-				C51C01D21ABC998B00971D38 /* PARWeatherViewController.xib */,
 			);
 			path = weatherApp;
 			sourceTree = "<group>";
@@ -147,6 +146,7 @@
 			children = (
 				C51C01D01ABC998B00971D38 /* PARWeatherViewController.h */,
 				C51C01D11ABC998B00971D38 /* PARWeatherViewController.m */,
+				C51C01D21ABC998B00971D38 /* PARWeatherViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
