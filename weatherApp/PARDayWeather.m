@@ -19,10 +19,19 @@
         _max = [NSString stringWithFormat:@"%ldºC", (long)[[day valueForKeyPath:@"temp.max"] floatValue]];
         _min = [NSString stringWithFormat:@"%ldºC", (long)[[day valueForKeyPath:@"temp.min"] integerValue]];
         _humidity = [day objectForKey:@"humidity"];
-        _imageURL = [NSURL URLWithString:[NSString stringWithFormat:ICON_URL, [[day valueForKeyPath:@"weather.icon"] firstObject]]];
+        _iconName = [[day valueForKeyPath:@"weather.icon"] firstObject];
+        _imageURL = [NSURL URLWithString:[NSString stringWithFormat:ICON_URL, _iconName]];
         NSLog(@"%@", [day valueForKeyPath:@"weather.icon"]);
     }
     return self;
+}
+
+-(void) setImage:(UIImage *)image{
+    _image = image;
+    if (image) {
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center postNotificationName:kImageHasBeenLoaded object:nil];
+    }
 }
 
 @end

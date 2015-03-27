@@ -21,16 +21,13 @@
 @implementation PARWeatherViewController
 
 - (void)viewDidLoad {
-    
     // [self.view endEditing:YES];
-    
     [super viewDidLoad];
     
     //solo si está en navigationViewController
     //self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    [self registerNibs];
 
+    [self registerNibs];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     
@@ -38,9 +35,26 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self.tableView
+               selector:@selector(reloadData)
+                   name:kImageHasBeenLoaded object:nil];
+}
+
+- (void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [self.forecast enumerateObjectsUsingBlock:^(PARDayWeather *day, NSUInteger idx, BOOL *stop) {
+        day.image = nil;
+    }];
 }
 
 #pragma mark - TableViewDelegate
@@ -63,20 +77,40 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PARForecastTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PARForecastTableViewCell cellId] forIndexPath:indexPath];
-    
-    [cell.forecastImage setImage:nil];
+
     
     PARDayWeather *cellModel = [self.model dayAtIndex:indexPath.row];
-    [cell.loading startAnimating];
+    
+    if (cellModel.image) {
+        [cell.forecastImage setImage:[cellModel image]];
+        [cell.loading stopAnimating];
+    }else{
+        [cell.forecastImage setImage:nil];
+        [cell.loading startAnimating];
+        
+        NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+        NSString *fileName = [NSString stringWithFormat:@"%@.png", [cellModel iconName]];
+        NSString *fileCachedPath = [cacheDir stringByAppendingPathComponent:fileName];
+        dispatch_async(dispatch_queue_create("cola", NULL), ^{
+            NSData *imageData = [NSData dataWithContentsOfFile:fileCachedPath];
+            
+            if (imageData) {
+                [cellModel setImage:[UIImage imageWithData:imageData]];
+            }else{
+                [self setCellIconURL:[cellModel imageURL] withImage:^(UIImage *image) {
+                    [UIImagePNGRepresentation(image) writeToFile:fileCachedPath
+                                                      atomically:YES];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        cellModel.image = image;
+                    });
+                }];
+            }
+        });
+        
+    }
     [cell.cityLabel setText:[cellModel dayDescription]];
     [cell.minLabel setText:[cellModel min]];
     [cell.maxLabel setText:[cellModel max]];
-    
-    
-    [self setCellIconURL:[cellModel imageURL] withImage:^(UIImage *image) {
-        [cell.forecastImage setImage:image];
-        [cell.loading stopAnimating];
-    }];
     
     return cell;
 }
@@ -122,10 +156,8 @@
         
         NSData *data = [NSData dataWithContentsOfURL:url];
         UIImage *image = [UIImage imageWithData:data];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionBlock(image);
-        });
+        completionBlock(image);
+
         
     });
 }

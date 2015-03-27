@@ -9,6 +9,8 @@
 @import Foundation;
 @import UIKit;
 
+static NSString *kImageHasBeenLoaded = @"PARImageHasBeenLoaded";
+
 @interface PARDayWeather : NSObject
 
 @property (nonatomic, copy) NSString *max;
@@ -16,7 +18,9 @@
 @property (nonatomic, copy) NSString *dayMain;
 @property (nonatomic, copy) NSString *dayDescription;
 @property (nonatomic, copy) NSString *humidity;
-@property (nonatomic, copy) NSURL *imageURL;
+@property (nonatomic, strong) NSString *iconName;
+@property (nonatomic, strong) NSURL *imageURL;
+@property (nonatomic, strong) UIImage *image;
 
 -(id) initWithJSONDay:(NSDictionary *) day;
 
